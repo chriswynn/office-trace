@@ -1,7 +1,10 @@
+import { ThemeProvider } from "theme-ui";
+import theme from "../styles/theme";
+
 const App = ({ Component, pageProps }) => (
-  <div>
+  <ThemeProvider theme={theme}>
     <Component {...pageProps} />
-  </div>
+  </ThemeProvider>
 );
 
 export default App;
