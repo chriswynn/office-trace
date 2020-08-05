@@ -6,7 +6,7 @@
   "scripts": {
     "start": "next",
     "migrate:gen": "prisma migrate save --experimental",
-    "migrate:up": "prisma migrate save --experimental"
+    "migrate:up": "prisma migrate up --experimental"
   },
   "keywords": [],
   "author": "",
