@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -64,7 +64,7 @@ model VerificationRequest {
 
 model Location {
   id         String    @default(uuid()) @id
-  name       String    @unique
+  token      String    @unique
   createdAt  DateTime  @default(now()) @map(name: "created_at")
   updatedAt  DateTime  @default(now()) @map(name: "updated_at")
 
