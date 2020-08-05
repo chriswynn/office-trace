@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "next",
+    "prisma:generate": "prisma generate",
     "migrate:gen": "prisma migrate save --experimental",
     "migrate:up": "prisma migrate up --experimental"
   },
