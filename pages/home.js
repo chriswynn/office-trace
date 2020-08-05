@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { getSession } from "next-auth/client";
 
@@ -13,7 +14,18 @@ const HomePage = ({ session }) => {
 
   return (
     <div>
-      {session ? <div>Welcome {session.user.name}</div> : <div>loading...</div>}
+      {session ? (
+        <div>
+          Welcome {session.user.name}
+          {session.user.role === "ADMIN" && (
+            <Link href="/admin">
+              <a>Admin Panel</a>
+            </Link>
+          )}
+        </div>
+      ) : (
+        <div>loading...</div>
+      )}
     </div>
   );
 };
