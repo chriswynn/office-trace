@@ -1,11 +1,14 @@
 const theme = {
   colors: {
-    text: "#14111D",
+    white: "#FFFFFF",
+    dark: "#14111D",
+    text: "dark",
     background: "#F0F0F0",
+    mojoGreen: "#00ba40",
     modes: {
       dark: {
-        text: "#FFFFFF",
-        background: "#14111D",
+        text: "white",
+        background: "dark",
       },
     },
   },
