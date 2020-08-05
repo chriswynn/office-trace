@@ -1,0 +1,55 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Visit",
+          "field": "userId"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Visit",
+          "field": "userId"
+        },
+        "directive": "map"
+      },
+      "argument": "name",
+      "value": "\"user_id\""
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Visit",
+          "field": "locationId"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Visit",
+          "field": "locationId"
+        },
+        "directive": "map"
+      },
+      "argument": "name",
+      "value": "\"location_id\""
+    }
+  ]
+}
