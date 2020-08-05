@@ -1,24 +1,36 @@
 /** @jsx jsx */
-import { jsx, Box, Heading } from "theme-ui";
-import { Fragment } from "react";
+import { jsx, Box, Heading, Button } from "theme-ui";
+import { Fragment, useState } from "react";
 
 import AddLocation from "./AddLocation";
 
-const LocationsList = ({ locations }) => (
-  <Fragment>
-    <Heading marginBottom={3} as="h2">
-      Locations
-    </Heading>
-    <Box sx={styles.list} as="ul">
-      {locations.map((location) => (
-        <Box as="li">{location.name}</Box>
-      ))}
-      <Box as="li">
-        <AddLocation />
+const LocationsList = ({ locations }) => {
+  const handleDelete = (id) => {
+    fetch("/api/locations", {
+      method: "DELETE",
+      body: JSON.stringify({ id }),
+    });
+  };
+
+  return (
+    <Fragment>
+      <Heading marginBottom={3} as="h2">
+        Locations
+      </Heading>
+      <Box sx={styles.list} as="ul">
+        {locations.map((location) => (
+          <Box as="li">
+            {location.name}
+            <Button onClick={() => handleDelete(location.id)}>Delete</Button>
+          </Box>
+        ))}
+        <Box as="li">
+          <AddLocation />
+        </Box>
       </Box>
-    </Box>
-  </Fragment>
-);
+    </Fragment>
+  );
+};
 
 const styles = {
   list: {
