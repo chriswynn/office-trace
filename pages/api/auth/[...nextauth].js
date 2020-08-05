@@ -13,6 +13,19 @@ const options = {
     }),
   ],
   adapter: Adapters.Prisma.Adapter({ prisma }),
+  callbacks: {
+    session: async (session, user) => {
+      const sessionWithRole = {
+        ...session,
+        user: {
+          ...session.user,
+          role: user.role,
+        },
+      };
+
+      return Promise.resolve(sessionWithRole);
+    },
+  },
 };
 
 export default (req, res) => NextAuth(req, res, options);
