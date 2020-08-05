@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Container } from "theme-ui";
 import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -13,7 +15,7 @@ const HomePage = ({ session }) => {
   }, [session]);
 
   return (
-    <div>
+    <Container>
       {session ? (
         <div>
           Welcome {session.user.name}
@@ -26,7 +28,7 @@ const HomePage = ({ session }) => {
       ) : (
         <div>loading...</div>
       )}
-    </div>
+    </Container>
   );
 };
 

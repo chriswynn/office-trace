@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Container } from "theme-ui";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { getSession } from "next-auth/client";
@@ -17,7 +19,7 @@ const AdminPage = ({ session }) => {
     return <div>Loading....</div>;
   }
 
-  return <div>Welcome to the Admin Panel!</div>;
+  return <Container>Welcome to the Admin Panel!</Container>;
 };
 
 export async function getServerSideProps(context) {

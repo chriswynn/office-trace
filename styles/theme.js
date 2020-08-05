@@ -16,6 +16,13 @@ const theme = {
     body:
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
   },
+  layout: {
+    container: {
+      maxWidth: 1200,
+      margin: "0 auto",
+      paddingX: 3,
+    },
+  },
   styles: {
     root: {
       fontFamily: "body",
