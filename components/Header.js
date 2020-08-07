@@ -11,7 +11,6 @@ const Header = () => {
       {session && (
         <Box as="header" sx={styles.header}>
           <Container sx={styles.container}>
-            <Image sx={styles.hex} src="/img/green_hex.svg" />
             <Box sx={styles.avatarContainer}>
               <Image src={session.user.image} />
             </Box>
@@ -23,15 +22,13 @@ const Header = () => {
 };
 const styles = {
   header: {
-    backgroundColor: "white",
-    boxShadow: "0 1px 1px rgba(0,0,0,.24),0 4px 4px rgba(0,0,0,.12)",
     marginBottom: 4,
     paddingY: 3,
     width: "100%",
   },
   container: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
   },
   hex: {
     height: 40,
