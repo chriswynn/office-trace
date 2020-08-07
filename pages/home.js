@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { getSession } from "next-auth/client";
 
+import CurrentTime from "../components/CurrentTime";
+
 const HomePage = ({ session }) => {
   const router = useRouter();
 
@@ -18,12 +20,7 @@ const HomePage = ({ session }) => {
     <Container>
       {session ? (
         <div>
-          Welcome {session.user.name}
-          {session.user.role === "ADMIN" && (
-            <Link href="/admin">
-              <a>Admin Panel</a>
-            </Link>
-          )}
+          <CurrentTime />
         </div>
       ) : (
         <div>loading...</div>
